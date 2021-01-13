@@ -1,13 +1,12 @@
-import React, { lazy, Suspense } from 'react'
-import { withAuth } from 'utils/hoc'
-import { Router, Route, Switch, Redirect } from 'react-router-dom'
-import { AppLoader } from '../Loader'
-import { createBrowserHistory } from 'history'
+import React, { lazy, Suspense } from "react";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+import { AppLoader } from "../Loader";
+import { createBrowserHistory } from "history";
 
-const history = createBrowserHistory()
+const history = createBrowserHistory();
 
-const Sites = lazy(() => import(/* webpackChunkName: "Sites" */ 'pagesSites'))
-const Site = lazy(() => import(/* webpackChunkName: "Site" */ 'pages/Site'))
+const Sites = lazy(() => import(/* webpackChunkName: "Sites" */ "pages/Sites"));
+const Site = lazy(() => import(/* webpackChunkName: "Site" */ "pages/Site"));
 
 const AppRouter = () => (
   <Router history={history}>
@@ -15,13 +14,9 @@ const AppRouter = () => (
       <Switch>
         <Route path="/sites" exact component={Sites} />
         <Route path="/sites:id" exact component={Site} />
-        <Route
-          path="/"
-          exact
-          component={() => <Redirect to="/sites" />}
-        />
+        <Route path="/" exact component={() => <Redirect to="/sites" />} />
       </Switch>
     </Suspense>
   </Router>
-)
-export default withAuth(AppRouter)
+);
+export default AppRouter;
