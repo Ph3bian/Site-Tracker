@@ -1,13 +1,25 @@
+@import "../../styles/variables.css";
 .ListItem {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 5em auto auto;
   padding: 1em;
   column-gap: 1em;
+  align-items: center;
+  border: 1px solid var(--light-grey);
   &Image {
     border-radius: 50%;
     height: 4em;
     width: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
     }
+  }
+  &Arrow {
+    margin-left: auto;
   }
 }

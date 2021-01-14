@@ -1,12 +1,32 @@
+@import "../../styles/variables.css";
 .Layout {
-    font-size: 1rem;
+  font-size: 1rem;
+  margin: -8px;
+  font-family: "Raleway", sans-serif;
   &Header {
     display: grid;
     grid-template-columns: repeat(3, auto);
+    background-color: var(--primary-color);
+    color: var(--light);
+    padding: 1em;
+    text-align: center;
+    &Profile {
+      margin-left: auto;
+    }
+    &Menu {
+      margin-right: auto;
+    }
   }
   &SubHeader {
-      text-align: center;
-      height: 3.75em;
+    text-align: center;
+    height: 3.75em;
+    background-color: var(--primary-color);
+    color: var(--light);
+    border-top: 1px solid var(--light);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &Children {
   }

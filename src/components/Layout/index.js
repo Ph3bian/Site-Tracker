@@ -6,15 +6,15 @@ const Layout = ({ pageName, children }) => {
   return (
     <div className={styles.Layout}>
       <div className={styles.LayoutHeader}>
-        <div>
+        <div className={styles.LayoutHeaderMenu}>
           <MenuIcon />
         </div>
         <div>Scheduling</div>
-        <div>
+        <div className={styles.LayoutHeaderProfile}>
           <AppsIcon />
         </div>
       </div>
-      {pageName && <div className={styles.LayoutHeader}>{pageName}</div>}
+      {pageName && <div className={styles.LayoutSubHeader}>{pageName}</div>}
       <div className={styles.LayoutChildren}>{children}</div>
     </div>
   );
