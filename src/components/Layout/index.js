@@ -1,8 +1,22 @@
 import React from "react";
+import { MenuIcon, AppsIcon } from "assets/svg";
+import styles from "./layout.module.scss";
 
-const Layout = () => {
-  return <div>
-      
-  </div>;
+const Layout = ({ pageName, children }) => {
+  return (
+    <div className={styles.Layout}>
+      <div className={styles.LayoutHeader}>
+        <div>
+          <MenuIcon />
+        </div>
+        <div>Scheduling</div>
+        <div>
+          <AppsIcon />
+        </div>
+      </div>
+      {pageName && <div className={styles.LayoutHeader}>{pageName}</div>}
+      <div className={styles.LayoutChildren}>{children}</div>
+    </div>
+  );
 };
 export default Layout;

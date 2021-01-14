@@ -1,3 +1,5 @@
 export { ReactComponent as Loading } from './loading.svg'
 export { ReactComponent as MenuIcon } from './menu.svg'
 export { ReactComponent as AppsIcon } from './apps.svg'
+export { ReactComponent as ChevronRight } from './chevron_right.svg'
+export { ReactComponent as ChevronLeft } from './chevron_left.svg'

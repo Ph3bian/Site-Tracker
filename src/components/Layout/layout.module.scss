@@ -1,0 +1,13 @@
+.Layout {
+    font-size: 1rem;
+  &Header {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+  }
+  &SubHeader {
+      text-align: center;
+      height: 3.75em;
+  }
+  &Children {
+  }
+}

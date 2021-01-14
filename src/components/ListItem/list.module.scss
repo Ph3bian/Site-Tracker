@@ -1,0 +1,13 @@
+.ListItem {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  padding: 1em;
+  column-gap: 1em;
+  &Image {
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    img {
+    }
+  }
+}
