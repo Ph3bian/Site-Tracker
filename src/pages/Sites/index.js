@@ -12,7 +12,7 @@ const Sites = () => {
   }, []);
 
   const { data, isLoading, hasError } = useSelector((state) => state.sites);
-  console.log(data, ">>>>>");
+
   return (
     <Layout pageName={"Sites"}>
       {isLoading ? (
