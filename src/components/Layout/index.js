@@ -2,7 +2,7 @@ import React from "react";
 import { MenuIcon, AppsIcon } from "assets/svg";
 import styles from "./layout.module.scss";
 
-const Layout = ({ pageName, children }) => {
+const Layout = ({ children }) => {
   return (
     <div className={styles.Layout}>
       <div className={styles.LayoutHeader}>
@@ -14,7 +14,7 @@ const Layout = ({ pageName, children }) => {
           <AppsIcon />
         </div>
       </div>
-      {pageName && <div className={styles.LayoutSubHeader}>{pageName}</div>}
+
       <div className={styles.LayoutChildren}>{children}</div>
     </div>
   );

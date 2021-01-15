@@ -17,9 +17,9 @@
       margin-right: auto;
     }
   }
-  &SubHeader {
+  [class="SubHeader"] {
     text-align: center;
-    height: 3.75em;
+    min-height: 3.75em;
     background-color: var(--primary-color);
     color: var(--light);
     border-top: 1px solid var(--light);

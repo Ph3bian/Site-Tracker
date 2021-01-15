@@ -1,0 +1,19 @@
+.Site {
+  &Header {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 2em;
+    align-items: center;
+    &Content {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      align-items: center;
+      column-gap: 1em;
+      img{
+          width: 3em;
+          height: 3em;
+          border-radius: 50%;
+      }
+    }
+  }
+}

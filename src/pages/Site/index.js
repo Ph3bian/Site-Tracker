@@ -1,21 +1,37 @@
 import React from "react";
-import { Layout } from "components";
 import { useLocation } from "react-router-dom";
+import { ChevronLeft } from "assets/svg";
+import { DetailsList } from "components";
 import styles from "./site.module.scss";
 
 const Site = () => {
-    const location = useLocation();
-    const data = location.state
-    console.log(data)
+  const location = useLocation();
+  const {
+    state: { address, contacts, title, images },
+  } = location;
   return (
-    <Layout>
-      <div>
+    <div className={styles.Site}>
+      <div className={["SubHeader", styles.SiteHeader].join(" ")}>
+        <ChevronLeft />
+        <div className={styles.SiteHeaderContent}>
+          <img src={images[0]} alt="avatar" />
+          <div className={styles.SiteHeaderDescription}>
+            <h2>{title}</h2>
+            <p>{`${address.street}, ${address.city}, ${address.country} `}</p>
+            <span>
+              {contacts?.main?.firstName || ""} {contacts?.main?.lastName || ""}
+            </span>
+          </div>
+        </div>
+
         <div className={styles.Info}>
           <div> </div>
-          <div> </div>
+          <div>
+            <DetailsList />
+          </div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 export default Site;

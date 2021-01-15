@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { Layout, ListItem, Table } from "components";
+import { ListItem, ListItemLoader, Table } from "components";
 import { fetchSites } from "store/actions/sites";
 import styles from "./sites.module.scss";
 
-const Sites = () => {
+const Sites = ({ history }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchSites());
@@ -14,15 +14,19 @@ const Sites = () => {
   const { data, isLoading, hasError } = useSelector((state) => state.sites);
 
   return (
-    <Layout pageName={"Sites"}>
+    <div>
+      <div className="SubHeader">Sites</div>
       {isLoading ? (
-        "Loading"
+        <ListItemLoader />
       ) : (
         <div>
           <div className={styles.Info}>
             <div> </div>
             <div>
-              {data && data.map((site, id) => <ListItem key={id} data={site} />)}
+              {data &&
+                data.map((site, id) => (
+                  <ListItem key={id} data={site} history={history} />
+                ))}
             </div>
             {/* <div>
               <Table data={data}/>
@@ -30,7 +34,7 @@ const Sites = () => {
           </div>
         </div>
       )}
-    </Layout>
+    </div>
   );
 };
 
