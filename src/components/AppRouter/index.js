@@ -12,8 +12,8 @@ const AppRouter = () => (
   <Router history={history}>
     <Suspense fallback={<AppLoader />}>
       <Switch>
-        <Route path="/sites" exact component={Sites} />
-        <Route path="/sites:id" exact component={Site} />
+        <Route path="sites" exact component={Sites} />
+        <Route path="sites/:id" exact component={Site} />
         <Route path="/" exact component={() => <Redirect to="/sites" />} />
       </Switch>
     </Suspense>

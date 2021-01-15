@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { Layout, ListItem } from "components";
+import { Layout, ListItem, Table } from "components";
 import { fetchSites } from "store/actions/sites";
 import styles from "./sites.module.scss";
 
@@ -24,6 +24,9 @@ const Sites = () => {
             <div>
               {data && data.map((site, id) => <ListItem key={id} data={site} />)}
             </div>
+            {/* <div>
+              <Table data={data}/>
+            </div> */}
           </div>
         </div>
       )}
